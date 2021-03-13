@@ -6,6 +6,28 @@
 #include <math.h>
 using namespace std;
 
+double pytagorovaVeta(int a, int b)
+{
+    double floata = (int)a;
+    double floatb = (int)b;
+    double aa = pow(floatb, 2);
+    double bb = pow(floatb, 2);
+
+    double cc = aa + bb;
+
+    double c = sqrt(cc);
+
+    return c;
+}
+
+void vypisBodov(int bod[])
+{
+    cout << "X:" << bod[0] << endl;
+    cout << "Y:" << bod[1] << endl;
+}
+
+
+
 int main()
 {
  
@@ -15,22 +37,37 @@ int main()
     int vyska = 0;
     int prepona = 0;
 
+    ///jednotlive body
+    int bodA[2];
+    int bodB[2];
+    int bodC[2];
 
-    //jednotlive body
-    int bodA[2] = { 0,0 };
-    int bodB[2] = { zakladna, 0 };
-    int bodC[2] = { 0,vyska };
+    bodA[0] = 0;
+    bodA[1] = 0;
     
 
-    cout << "Zadaj dlzku zakladne";
+    //Zadanie dlzok stran
+    cout << "Zadaj dlzku zakladne\n";
     cin >> zakladna;
 
-    cout << "Zadaj dlzku vysky";
+    cout << "Zadaj dlzku vysky\n";
     cin >> vyska;
 
-    cout << "body trojuholniku su";
+    bodB[0] = {zakladna};
+    bodB[1] = {0};
+
+    bodC[0] = {0};
+    bodC[1] = {vyska};
+
+    cout << endl << "Prepona:" << zakladna << endl << vyska << endl;
+    cout << "Odvesna:" << pytagorovaVeta(zakladna, vyska) << endl;
+
+    cout << "body trojuholniku su" << endl;
+    cout << "A" << endl;
     vypisBodov(bodA);
+    cout << "B" << endl;
     vypisBodov(bodB);
+    cout << "C" << endl;
     vypisBodov(bodC);
 
 
@@ -38,17 +75,7 @@ int main()
 }
 
 
-float pytagorovaVeta(int a, int b)
-{
-    int aa = a * a;
-    int bb = b * b;
 
-    int cc = aa + bb;
-
-    float c = sqrt(cc);
-
-    return c;
-}
 
 /*
 bool jepravouhly(int zakladna, int vyska)
@@ -57,14 +84,7 @@ bool jepravouhly(int zakladna, int vyska)
 }
 */
 
-void vypisBodov (int bod[])
-{
-    for (int i = 0; i >= 2; i++)
-    {
-        cout << "X" << bod[i]<<"endl";
-        cout << "Y" << bod[i]<<"endl";
-    }
-}
+
 
 /* Nacitanie Bodov
 void nacitanieBodov(int bod[])
