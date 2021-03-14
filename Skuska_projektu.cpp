@@ -26,6 +26,22 @@ void vypisBodov(int bod[])
     cout << "Y:" << bod[1] << endl;
 }
 
+bool jepravouhly(int zakladna, int vyska)
+{
+    
+    double sucetStvorcaNadObomaOdvesnami = pow(zakladna, 2) + pow(vyska, 2);
+    double sucetStvorcaNadPreponou = pow(pytagorovaVeta(zakladna, vyska), 2);
+    
+    if (sucetStvorcaNadObomaOdvesnami == sucetStvorcaNadPreponou)
+    {
+        return 1;
+    }
+
+    else
+    {
+        return 0;
+    }
+}
 
 
 int main()
@@ -70,21 +86,18 @@ int main()
     cout << "C" << endl;
     vypisBodov(bodC);
 
+    if (jepravouhly(zakladna,vyska) == 1)
+    {
+        cout << endl << "tento trojuholnik je naozaj pravouhly";
+    }
+
+    else
+    {
+        cout << endl << "tento trojuholnik nie je pravouhly" << endl;
+    }
 
     return 0;
 }
-
-
-
-
-/*
-bool jepravouhly(int zakladna, int vyska)
-{
-    c=  
-}
-*/
-
-
 
 /* Nacitanie Bodov
 void nacitanieBodov(int bod[])
